@@ -1,0 +1,79 @@
+aderyn --help
+Aderyn - Rust based Solidity Static analyzer.
+
+Quickstart:
+cd my-solidity-project/
+aderyn
+
+It outputs report.md if the solidity project is foundry/hardhat/soldeer.
+
+In the case that it's not, it's important to create a config file via the
+command `aderyn init` in the workspace root.
+
+For more examples, visit docs: https://cyfrin.gitbook.io/cyfrin-docs/aderyn-cli
+Also ask questions via command line: `aderyn docs "how to configure scan options?"`
+
+Help Aderyn stay open source by giving us a star on Github.
+Repository: https://github.com/cyfrin/aderyn
+
+
+Usage: aderyn [OPTIONS] [ROOT] [COMMAND]
+
+Commands:
+  registry  Browse detector registry
+  init      Initializes aderyn.toml. Required when solidity project root is not the workspace root
+  docs      Browse Aderyn documentation Chat with AI for help - aderyn docs "how to exclude files from scan?"
+  help      Print this message or the help of the given subcommand(s)
+
+Arguments:
+  [ROOT]
+          Solidity project root directory
+          
+          [default: .]
+
+Options:
+  -s, --src <SRC>
+          Path to the contracts source directory (relative to the root)
+          By default, it is auto detected in most projects.
+
+  -i, --path-includes <PATH_INCLUDES>
+          List of path fragments to include, delimited by comma (no spaces)
+          By default, it is auto detected.
+          
+          Use this to include only specified source files in the analysis:
+          Examples:
+              -i src/MyContract.sol
+              -i src/MyContract.sol,src/MyOtherContract.sol
+
+  -x, --path-excludes <PATH_EXCLUDES>
+          List of path fragments to exclude, delimited by comma (no spaces)
+          By default, it is auto detected.
+          
+          Use this to exclude only specified source files in the analysis:
+          Examples:
+              -x src/MyContract.sol
+              -x src/MyContract.sol,src/MyOtherContract.sol
+
+  -o, --output <OUTPUT>
+          Desired file path for the final report
+          Output file extension (.json/.md/.sarif) decides the format.
+          
+          NOTE: Allowed formats: JSON, Markdown, Sarif
+          NOTE: Overwrites existing file if found in the same path.
+          
+          [default: report.md]
+
+  -l, --lsp
+          Start Aderyn's LSP server on stdout. (Must be accompanied with `--stdout`)
+
+      --highs-only
+          Only use the high detectors
+
+      --skip-update-check
+          After generating report, skip checking if a new version of Aderyn is available
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+  -V, --version
+          Print version

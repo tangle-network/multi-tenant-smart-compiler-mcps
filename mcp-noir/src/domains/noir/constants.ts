@@ -1,0 +1,1 @@
+export const NARGO_BIN = "nargo"

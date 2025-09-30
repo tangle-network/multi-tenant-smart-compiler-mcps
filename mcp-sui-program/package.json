@@ -1,0 +1,40 @@
+{
+  "name": "mcp-sui-program",
+  "description": "MCP kit for Sui program development",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "test": "vitest --run",
+    "test:watch": "vitest --watch",
+    "typecheck": "tsc --noEmit",
+    "build": "vite build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "@modelcontextprotocol/sdk": "1.10.2",
+    "dotenv": "^16.4.7",
+    "get-port": "^7.1.0",
+    "mcp-fs": "workspace:*",
+    "mcp-http": "workspace:*",
+    "superjson": "^2.2.2",
+    "vitest": "^3.2.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.3"
+  }
+}

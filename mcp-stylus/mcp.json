@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "tangle": {
+      "command": "node",
+      "args": ["dist/index.js"],
+      "env": {
+        "PORT": 3000
+      }
+    }
+  }
+}

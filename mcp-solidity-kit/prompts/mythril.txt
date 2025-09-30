@@ -1,0 +1,23 @@
+docker run -it mythril/myth
+usage: myth [-h] [-v LOG_LEVEL]
+            {safe-functions,analyze,a,disassemble,d,concolic,c,foundry,f,list-detectors,read-storage,function-to-hash,hash-to-address,version,help} ...
+
+Security analysis of Ethereum smart contracts
+
+positional arguments:
+  {safe-functions,analyze,a,disassemble,d,concolic,c,foundry,f,list-detectors,read-storage,function-to-hash,hash-to-address,version,help}
+                        Commands
+    safe-functions      Check functions which are completely safe using symbolic execution
+    analyze (a)         Triggers the analysis of the smart contract
+    disassemble (d)     Disassembles the smart contract
+    concolic (c)        Runs concolic execution to flip the desired branches
+    foundry (f)         Triggers the analysis of the smart contract
+    list-detectors      Lists available detection modules
+    read-storage        Retrieves storage slots from a given address through rpc
+    function-to-hash    Returns the hash signature of the function
+    hash-to-address     converts the hashes in the blockchain to ethereum address
+    version             Outputs the version
+
+options:
+  -h, --help            show this help message and exit
+  -v LOG_LEVEL          log level (0-5)

@@ -1,0 +1,1 @@
+export const CARGO_PATH = "cargo";

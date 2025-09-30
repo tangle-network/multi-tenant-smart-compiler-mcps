@@ -1,0 +1,30 @@
+{
+  "name": "mcp-guide-generator",
+  "version": "1.0.0",
+  "description": "MCP server for guide generation using guide-generator CLI",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": "dist/index.js",
+  "scripts": {
+    "build": "vite build",
+    "dev": "PORT=${GUIDE_MCP_PORT:-3002} tsx watch src/index.ts",
+    "start": "PORT=${GUIDE_MCP_PORT:-3002} tsx src/index.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.10.2",
+    "mcp-http": "workspace:*",
+    "superjson": "^2.2.2",
+    "uuid": "^11.1.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.3"
+  }
+}

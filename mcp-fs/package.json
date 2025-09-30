@@ -1,0 +1,38 @@
+{
+  "name": "mcp-fs",
+  "private": true,
+  "version": "1.0.0",
+  "description": "MCP file system implementation for Blueprint Agent",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.10.2",
+    "@types/multer": "^1.4.13",
+    "async-mutex": "^0.5.0",
+    "mcp-http": "workspace:^",
+    "multer": "^2.0.1",
+    "superjson": "^2.2.2",
+    "uuid": "^11.1.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.3",
+    "@types/node": "^22.14.1",
+    "@types/shell-quote": "^1.7.5",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.3",
+    "vitest": "^3.2.4"
+  }
+}

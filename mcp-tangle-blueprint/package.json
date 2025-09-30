@@ -1,0 +1,37 @@
+{
+  "name": "mcp-tangle-blueprint",
+  "version": "1.0.0",
+  "description": "MCP server implementation for Tangle Blueprints",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": "dist/index.js",
+  "scripts": {
+    "test": "vitest --run",
+    "test:watch": "vitest --watch",
+    "typecheck": "tsc --noEmit",
+    "build": "vite build",
+    "dev": "tsx watch src/index.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "@modelcontextprotocol/sdk": "1.10.2",
+    "mcp-cargo": "workspace:*",
+    "mcp-fs": "workspace:*",
+    "mcp-http": "workspace:*",
+    "mcp-solidity-kit": "workspace:*",
+    "superjson": "^2.2.2",
+    "uuid": "^11.1.0",
+    "vitest": "^3.2.4",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.3"
+  }
+}

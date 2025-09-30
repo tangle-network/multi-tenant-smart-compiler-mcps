@@ -1,0 +1,33 @@
+{
+  "name": "mcp-cargo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "MCP cargo tools and resources for Blueprint Agent",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.10.2",
+    "mcp-fs": "workspace:*",
+    "mcp-http": "workspace:*",
+    "superjson": "^2.2.2",
+    "uuid": "^11.1.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.3"
+  }
+}

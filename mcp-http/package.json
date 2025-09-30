@@ -1,0 +1,42 @@
+{
+  "name": "mcp-http",
+  "private": true,
+  "version": "1.0.0",
+  "description": "MCP HTTP Transport implementation for Blueprint Agent",
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    },
+    "./types": {
+      "import": "./src/types.ts"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.10.2",
+    "close-with-grace": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "5.1.0",
+    "express-rate-limit": "^8.0.1",
+    "get-port-please": "^3.1.2",
+    "superjson": "^2.2.2",
+    "uuid": "^11.1.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "5.0.3",
+    "@types/node": "^22.14.1",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.3"
+  }
+}
