@@ -1,0 +1,151 @@
+services:
+  # Solidity development kit
+  mcp-solidity-kit:
+    image: tangle-network/mcp-solidity-kit:latest
+    build:
+      context: packages/mcp-solidity-kit
+      dockerfile: Dockerfile
+    env_file:
+      - packages/mcp-solidity-kit/.env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    ports:
+      - "4001:3000"
+    networks:
+      - mcp-network
+
+  # Tangle Blueprint
+  mcp-tangle-blueprint:
+    image: tangle-network/mcp-tangle-blueprint:latest
+    build:
+      context: packages/mcp-tangle-blueprint
+      dockerfile: Dockerfile
+    env_file: packages/mcp-tangle-blueprint/.env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    ports:
+      - "4002:3000"
+    networks:
+      - mcp-network
+
+  # Solana/Anchor
+  mcp-solana-program:
+    image: tangle-network/mcp-solana-program:latest
+    build:
+      context: packages/mcp-solana-program
+      dockerfile: Dockerfile
+    env_file: packages/mcp-solana-program/.env
+    restart: unless-stopped
+    ports:
+      - "4003:3000"
+    networks:
+      - mcp-network
+
+  # Sui Move
+  mcp-sui-program:
+    image: tangle-network/mcp-sui-program:latest
+    build:
+      context: packages/mcp-sui-program
+      dockerfile: Dockerfile
+    env_file: packages/mcp-sui-program/.env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    ports:
+      - "4004:3000"
+    networks:
+      - mcp-network
+
+  # Arbitrum Stylus
+  mcp-stylus:
+    image: tangle-network/mcp-stylus:latest
+    build:
+      context: packages/mcp-stylus
+      dockerfile: Dockerfile
+    env_file: packages/mcp-stylus/.env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    ports:
+      - "4005:3000"
+    networks:
+      - mcp-network
+
+  # RISC Zero zkVM
+  mcp-risc-zero:
+    image: tangle-network/mcp-risc-zero:latest
+    build:
+      context: packages/mcp-risc-zero
+      dockerfile: Dockerfile
+    env_file: packages/mcp-risc-zero/.env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    ports:
+      - "4006:3000"
+    networks:
+      - mcp-network
+
+  # Succinct SP1
+  mcp-succinct:
+    image: tangle-network/mcp-succinct:latest
+    build:
+      context: packages/mcp-succinct
+      dockerfile: Dockerfile
+    env_file: packages/mcp-succinct/.env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    ports:
+      - "4007:3000"
+    networks:
+      - mcp-network
+
+  # Noir ZKP
+  mcp-noir:
+    image: tangle-network/mcp-noir:latest
+    build:
+      context: packages/mcp-noir
+      dockerfile: Dockerfile
+    env_file: packages/mcp-noir/.env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    ports:
+      - "4008:3000"
+    networks:
+      - mcp-network
+
+networks:
+  mcp-network:
+    driver: bridge

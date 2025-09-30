@@ -1,0 +1,40 @@
+{
+  "name": "@tangle-network/multi-tenant-smart-compiler-mcps",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MCP servers for multi-platform smart contract development",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev": "pnpm -r --parallel dev",
+    "test": "pnpm -r test",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "lint:fix": "pnpm -r lint:fix",
+    "format": "pnpm -r format",
+    "format:fix": "pnpm -r format:fix",
+    "clean": "pnpm -r exec rm -rf dist node_modules",
+    "docker:build": "./scripts/build.sh all",
+    "docker:build:cache": "./scripts/build.sh cache",
+    "docker:build:mcp": "./scripts/build.sh mcp",
+    "docker:push": "./scripts/build.sh all --push",
+    "mcp:start": "./scripts/mcp-orchestrator.sh start",
+    "mcp:stop": "./scripts/mcp-orchestrator.sh stop",
+    "mcp:health": "./scripts/mcp-orchestrator.sh health",
+    "mcp:logs": "./scripts/mcp-orchestrator.sh logs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.3",
+    "vitest": "^3.2.4",
+    "tsx": "^4.7.0",
+    "prettier": "^3.2.5",
+    "eslint": "^8.57.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.0.0"
+}

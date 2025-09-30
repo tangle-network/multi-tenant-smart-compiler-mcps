@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    /* Base Options: */
     "esModuleInterop": true,
     "skipLibCheck": true,
     "target": "ESNext",
@@ -9,26 +8,12 @@
     "moduleDetection": "force",
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
-
-    /* Strictness */
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
-
-    /* If transpiling with TypeScript: */
     "module": "ESNext",
-    "outDir": "dist",
-    "rootDir": ".",
-    "sourceMap": true,
-
-    /* AND if you're building for a library: */
-    "declaration": true,
-
-    /* If your code doesn't run in the DOM: */
+    "moduleResolution": "bundler",
     "lib": ["es2022"],
-
-    "types": ["vite/client", "node"]
-  },
-  "include": ["src"],
-  "extends": "../tsconfig.base.json"
+    "types": ["node"]
+  }
 }

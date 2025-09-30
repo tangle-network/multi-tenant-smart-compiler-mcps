@@ -1,7 +1,9 @@
 node_modules
-.DS_STORE
+.DS_Store
 *.log
 dist
 *.env
 .env
+build.log
+pnpm-lock.yaml
 
