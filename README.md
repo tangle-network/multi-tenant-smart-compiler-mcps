@@ -83,24 +83,6 @@ docker-compose -f docker-compose.mcp.yml up mcp-solidity-kit
 2. Add to `scripts/build.sh` (CACHE_LAYERS, MCP_SERVICES)
 3. Add to `docker-compose.mcp.yml`
 
-## Repository Structure
-
-```
-mcp-solidity-kit/       # Ethereum: Hardhat, Foundry, Slither
-mcp-tangle-blueprint/   # Tangle: Substrate + EVM
-mcp-solana-program/     # Solana: Anchor
-mcp-sui-program/        # Sui Move
-mcp-stylus/             # Arbitrum Stylus: Rust → WASM
-mcp-noir/               # Aztec Noir: zkSNARKs
-mcp-risc-zero/          # RISC Zero zkVM
-mcp-succinct/           # Succinct SP1
-mcp-cargo/              # Shared Rust tooling
-mcp-fs/                 # Shared filesystem + multi-tenancy
-mcp-http/               # Shared HTTP transport
-mcp-template/           # Boilerplate
-scripts/                # Build orchestration
-```
-
 ## License
 
 MIT
